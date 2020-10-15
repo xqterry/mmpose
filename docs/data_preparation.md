@@ -15,10 +15,15 @@ MMPose supported datasets:
 - [OneHand10K](https://www.yangangwang.com/papers/WANG-MCC-2018-10.html)
 - [FreiHand](https://lmb.informatik.uni-freiburg.de/projects/freihand/)
 - [CMU Panoptic HandDB](http://domedb.perception.cs.cmu.edu/handdb.html)
+- [Human3.6M](http://vision.imar.ro/human3.6m/description.php)
+- [MPI-INF-3DHP](http://gvv.mpi-inf.mpg.de/3dhp-dataset/)
+- [LSP](https://sam.johnson.io/research/lsp.html)
+- [LSPET](https://sam.johnson.io/research/lspet.html)
 
 ## COCO
 
 For COCO data, please download from [COCO download](http://cocodataset.org/#download), 2017 Train/Val is needed for COCO keypoints training and validation.
+2014 Train is needed for human mesh estimation training.
 [HRNet-Human-Pose-Estimation](https://github.com/HRNet/HRNet-Human-Pose-Estimation) provides person detection result of COCO val2017 to reproduce our multi-person pose estimation results. Please download from [OneDrive](https://1drv.ms/f/s!AhIXJn_J-blWzzDXoz5BeFl8sWM-).
 Download and extract them under $MMPOSE/data, and make them look like this:
 
@@ -36,6 +41,11 @@ mmpose
         │   |-- person_keypoints_val2017.json
         |-- person_detection_results
         |   |-- COCO_val2017_detections_AP_H_56_person.json
+        │-- train2014
+        │   ├── COCO_train2014_000000000009.jpg
+        │   ├── COCO_train2014_000000000025.jpg
+        │   ├── COCO_train2014_000000000030.jpg
+            │-- ...
         │-- train2017
         │   │-- 000000000009.jpg
         │   │-- 000000000025.jpg
@@ -327,4 +337,185 @@ mmpose
                 |── 000648952_02_l.jpg
                 |── 000835470_01_l.jpg
                  ...
+```
+
+
+## Human3.6M
+
+For Human3.6M, we use the MoShed data provided in [HMR](https://github.com/akanazawa/hmr) for training.
+However, due to license limitations, we are not allowed to redistribute the MoShed data.
+
+For the evaluation on Human3.6M dataset, please follow the
+[preprocess procedure of SPIN](https://github.com/nkolot/SPIN/tree/master/datasets/preprocess)
+to extract test images from
+[Human3.6M original videos](http://vision.imar.ro/human3.6m/description.php),
+and make it look like this:
+
+```
+mmpose
+├── mmpose
+├── docs
+├── tests
+├── tools
+├── configs
+`── data
+    │── Human3.6M
+        ├── images
+            ├── S11_Directions_1.54138969_000001.jpg
+            ├── S11_Directions_1.54138969_000006.jpg
+            ├── S11_Directions_1.54138969_000011.jpg
+            ├── ...
+```
+
+## MPI-INF-3DHP
+
+For MPI-INF-3DHP, please follow the
+[preprocess procedure of SPIN](https://github.com/nkolot/SPIN/tree/master/datasets/preprocess)
+ to extract images, and make them like this:
+
+```
+mmpose
+├── mmpose
+├── docs
+├── tests
+├── tools
+├── configs
+`── data
+    ├── mpi_inf_3dhp_test_set
+    │   ├── TS1
+    │   ├── TS2
+    │   ├── TS3
+    │   ├── TS4
+    │   ├── TS5
+    │   └── TS6
+    ├── S1
+    │   ├── Seq1
+    │   └── Seq2
+    ├── S2
+    │   ├── Seq1
+    │   └── Seq2
+    ├── S3
+    │   ├── Seq1
+    │   └── Seq2
+    ├── S4
+    │   ├── Seq1
+    │   └── Seq2
+    ├── S5
+    │   ├── Seq1
+    │   └── Seq2
+    ├── S6
+    │   ├── Seq1
+    │   └── Seq2
+    ├── S7
+    │   ├── Seq1
+    │   └── Seq2
+    └── S8
+        ├── Seq1
+        └── Seq2
+```
+
+## LSP
+
+For LSP, please download the high resolution version of the dataset
+[LSP dataset original](http://sam.johnson.io/research/lsp_dataset_original.zip).
+Extract them under {MMPose}/data, and make them look like this:
+
+```
+mmpose
+├── mmpose
+├── docs
+├── tests
+├── tools
+├── configs
+`── data
+    │── lsp_dataset_original
+        ├── images
+            ├── im0001.jpg
+            ├── im0002.jpg
+            └── ...
+```
+
+## LSPET
+
+For LSPET, please download its high resolution form
+[HR-LSPET](http://datasets.d2.mpi-inf.mpg.de/hr-lspet/hr-lspet.zip).
+Extract them under {MMPose}/data, and make them look like this:
+
+```
+mmpose
+├── mmpose
+├── docs
+├── tests
+├── tools
+├── configs
+`── data
+    │── lspet_dataset
+        ├── images
+        │   ├── im00001.jpg
+        │   ├── im00002.jpg
+        │   ├── im00003.jpg
+        │   └── ...
+        └── joints.mat
+```
+
+## Annotation Files for Human Mesh Estimation
+
+For human mesh estimation, we use multiple datasets for training.
+The annotation of different datasets are preprocessed to the same format. Please
+follow the [preprocess procedure of SPIN](https://github.com/nkolot/SPIN/tree/master/datasets/preprocess)
+to generate the annotation files or download the processed files from [here](), and make
+it look like this:
+
+```
+mmpose
+├── mmpose
+├── docs
+├── tests
+├── tools
+├── configs
+`── data
+    │── mesh_annot_files
+        ├── coco_2014_train.npz
+        ├── h36m_valid_protocol1.npz
+        ├── h36m_valid_protocol2.npz
+        ├── hr-lspet_train.npz
+        ├── lsp_dataset_original_train.npz
+        ├── mpi_inf_3dhp_train.npz
+        └── mpii_train.npz
+```
+
+## CMU MoShed Data
+
+Real-world SMPL parameters is used for adversarial training in human mesh estimation.
+Please download the [MoShed data]() provided in [HMR](https://github.com/akanazawa/hmr),
+and make it look like this:
+
+```
+mmpose
+├── mmpose
+├── docs
+├── tests
+├── tools
+├── configs
+`── data
+    │── mesh_annot_files
+        ├── CMU_mosh.npz
+        └── ...
+```
+
+# SMPL Model
+
+For human mesh estimation, SMPL model is used to generate the human mesh.
+Please download the [gender neutral SMPL model](http://smplify.is.tue.mpg.de/)
+and the [joints regressor](),
+and make it look like this:
+
+```
+mmpose
+├── mmpose
+├── ...
+├── models
+    │── smpl
+        ├── joints_regressor_cmr.npy
+        └── SMPL_NEUTRAL.pkl
 ```
