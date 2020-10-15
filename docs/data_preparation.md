@@ -346,9 +346,9 @@ For Human3.6M, we use the MoShed data provided in [HMR](https://github.com/akana
 However, due to license limitations, we are not allowed to redistribute the MoShed data.
 
 For the evaluation on Human3.6M dataset, please follow the
-[preprocess procedure of SPIN](https://github.com/nkolot/SPIN/tree/master/datasets/preprocess)
-to extract test images from
-[Human3.6M original videos](http://vision.imar.ro/human3.6m/description.php),
+[preprocess procedure](https://github.com/nkolot/SPIN/tree/master/datasets/preprocess)
+of SPIN to extract test images from
+[Human3.6M](http://vision.imar.ro/human3.6m/description.php) original videos,
 and make it look like this:
 
 ```
@@ -370,8 +370,8 @@ mmpose
 ## MPI-INF-3DHP
 
 For MPI-INF-3DHP, please follow the
-[preprocess procedure of SPIN](https://github.com/nkolot/SPIN/tree/master/datasets/preprocess)
- to extract images, and make them like this:
+[preprocess procedure](https://github.com/nkolot/SPIN/tree/master/datasets/preprocess)
+of SPIN to extract images, and make them like this:
 
 ```
 mmpose
@@ -416,7 +416,7 @@ mmpose
 
 ## LSP
 
-For LSP, please download the high resolution version of the dataset
+For LSP, please download the high resolution version
 [LSP dataset original](http://sam.johnson.io/research/lsp_dataset_original.zip).
 Extract them under {MMPose}/data, and make them look like this:
 
@@ -462,8 +462,8 @@ mmpose
 
 For human mesh estimation, we use multiple datasets for training.
 The annotation of different datasets are preprocessed to the same format. Please
-follow the [preprocess procedure of SPIN](https://github.com/nkolot/SPIN/tree/master/datasets/preprocess)
-to generate the annotation files or download the processed files from [here](), and make
+follow the [preprocess procedure](https://github.com/nkolot/SPIN/tree/master/datasets/preprocess)
+of SPIN to generate the annotation files or download the processed files from [here](), and make
 it look like this:
 
 ```
@@ -486,7 +486,7 @@ mmpose
 
 ## CMU MoShed Data
 
-Real-world SMPL parameters is used for adversarial training in human mesh estimation.
+Real-world SMPL parameters is used for the adversarial training in human mesh estimation.
 Please download the [MoShed data]() provided in [HMR](https://github.com/akanazawa/hmr),
 and make it look like this:
 
@@ -506,8 +506,8 @@ mmpose
 # SMPL Model
 
 For human mesh estimation, SMPL model is used to generate the human mesh.
-Please download the [gender neutral SMPL model](http://smplify.is.tue.mpg.de/)
-and the [joints regressor](),
+Please download the [gender neutral SMPL model](http://smplify.is.tue.mpg.de/),
+[joints regressor]() and [mean parameters](),
 and make it look like this:
 
 ```
@@ -517,5 +517,6 @@ mmpose
 ├── models
     │── smpl
         ├── joints_regressor_cmr.npy
+        ├── smpl_mean_params.npz
         └── SMPL_NEUTRAL.pkl
 ```
