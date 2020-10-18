@@ -463,8 +463,9 @@ mmpose
 For human mesh estimation, we use multiple datasets for training.
 The annotation of different datasets are preprocessed to the same format. Please
 follow the [preprocess procedure](https://github.com/nkolot/SPIN/tree/master/datasets/preprocess)
-of SPIN to generate the annotation files or download the processed files from [here](), and make
-it look like this:
+of SPIN to generate the annotation files or download the processed files from
+[here](https://download.openmmlab.com/mmpose/datasets/mesh_annotation_files.zip),
+and make it look like this:
 
 ```
 mmpose
@@ -474,7 +475,7 @@ mmpose
 ├── tools
 ├── configs
 `── data
-    │── mesh_annot_files
+    │── mesh_annotation_files
         ├── coco_2014_train.npz
         ├── h36m_valid_protocol1.npz
         ├── h36m_valid_protocol2.npz
@@ -486,9 +487,10 @@ mmpose
 
 ## CMU MoShed Data
 
-Real-world SMPL parameters is used for the adversarial training in human mesh estimation.
-Please download the [MoShed data]() provided in [HMR](https://github.com/akanazawa/hmr),
-and make it look like this:
+Real-world SMPL parameters are used for the adversarial training in human mesh estimation.
+The MoShed data provided in [HMR](https://github.com/akanazawa/hmr) is included in this
+[zip file](https://download.openmmlab.com/mmpose/datasets/mesh_annotation_files.zip).
+Please download and extract it under $MMPOSE/data, and make it look like this:
 
 ```
 mmpose
@@ -498,7 +500,7 @@ mmpose
 ├── tools
 ├── configs
 `── data
-    │── mesh_annot_files
+    │── mesh_annotation_files
         ├── CMU_mosh.npz
         └── ...
 ```
@@ -507,8 +509,9 @@ mmpose
 
 For human mesh estimation, SMPL model is used to generate the human mesh.
 Please download the [gender neutral SMPL model](http://smplify.is.tue.mpg.de/),
-[joints regressor]() and [mean parameters](),
-and make it look like this:
+[joints regressor](https://download.openmmlab.com/mmpose/datasets/joints_regressor_cmr.npy)
+and [mean parameters](https://download.openmmlab.com/mmpose/datasets/smpl_mean_params.npz)
+under $MMPOSE/models/smpl, and make it look like this:
 
 ```
 mmpose

@@ -113,33 +113,34 @@ data = dict(
             type='MeshMixDataset',
             configs=[
                 dict(
-                    ann_file='data/mesh_annot_files/h36m_train.npz',
+                    ann_file='data/mesh_annotation_files/h36m_train.npz',
                     img_prefix='data/h36m_train',
                     data_cfg=data_cfg,
                     pipeline=train_pipeline),
                 dict(
-                    ann_file='data/mesh_annot_files/mpi_inf_3dhp_train.npz',
+                    ann_file='data/mesh_annotation_files/'
+                    'mpi_inf_3dhp_train.npz',
                     img_prefix='data/mpi_inf_3dhp',
                     data_cfg=data_cfg,
                     pipeline=train_pipeline),
                 dict(
-                    ann_file='data/mesh_annot_files/'
+                    ann_file='data/mesh_annotation_files/'
                     'lsp_dataset_original_train.npz',
                     img_prefix='data/lsp_dataset_original',
                     data_cfg=data_cfg,
                     pipeline=train_pipeline),
                 dict(
-                    ann_file='data/mesh_annot_files/hr-lspet_train.npz',
+                    ann_file='data/mesh_annotation_files/hr-lspet_train.npz',
                     img_prefix='data/hr-lspet',
                     data_cfg=data_cfg,
                     pipeline=train_pipeline),
                 dict(
-                    ann_file='data/mesh_annot_files/mpii_train.npz',
+                    ann_file='data/mesh_annotation_files/mpii_train.npz',
                     img_prefix='data/mpii',
                     data_cfg=data_cfg,
                     pipeline=train_pipeline),
                 dict(
-                    ann_file='data/mesh_annot_files/coco_2014_train.npz',
+                    ann_file='data/mesh_annotation_files/coco_2014_train.npz',
                     img_prefix='data/coco',
                     data_cfg=data_cfg,
                     pipeline=train_pipeline),
@@ -147,13 +148,13 @@ data = dict(
             partition=[0.35, 0.15, 0.1, 0.10, 0.10, 0.2]),
         adversarial_dataset=dict(
             type='MoshDataset',
-            ann_file='data/mesh_annot_files/CMU_mosh.npz',
+            ann_file='data/mesh_annotation_files/CMU_mosh.npz',
             pipeline=train_adv_pipeline),
     ),
     test=dict(
         type='MeshH36MDataset',
-        ann_file='data/mesh_annot_files/h36m_valid_protocol2.npz',
-        img_prefix='data/MyH36MOrigin',
+        ann_file='data/mesh_annotation_files/h36m_valid_protocol2.npz',
+        img_prefix='data/Human3.6M',
         data_cfg=data_cfg,
         pipeline=test_pipeline,
     ),
