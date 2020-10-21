@@ -418,7 +418,7 @@ mmpose
 
 For LSP, please download the high resolution version
 [LSP dataset original](http://sam.johnson.io/research/lsp_dataset_original.zip).
-Extract them under {MMPose}/data, and make them look like this:
+Extract them under `$MMPOSE/data`, and make them look like this:
 
 ```
 mmpose
@@ -439,7 +439,7 @@ mmpose
 
 For LSPET, please download its high resolution form
 [HR-LSPET](http://datasets.d2.mpi-inf.mpg.de/hr-lspet/hr-lspet.zip).
-Extract them under {MMPose}/data, and make them look like this:
+Extract them under `$MMPOSE/data`, and make them look like this:
 
 ```
 mmpose
@@ -490,7 +490,7 @@ mmpose
 Real-world SMPL parameters are used for the adversarial training in human mesh estimation.
 The MoShed data provided in [HMR](https://github.com/akanazawa/hmr) is included in this
 [zip file](https://download.openmmlab.com/mmpose/datasets/mesh_annotation_files.zip).
-Please download and extract it under $MMPOSE/data, and make it look like this:
+Please download and extract it under `$MMPOSE/data`, and make it look like this:
 
 ```
 mmpose
@@ -511,7 +511,7 @@ For human mesh estimation, SMPL model is used to generate the human mesh.
 Please download the [gender neutral SMPL model](http://smplify.is.tue.mpg.de/),
 [joints regressor](https://download.openmmlab.com/mmpose/datasets/joints_regressor_cmr.npy)
 and [mean parameters](https://download.openmmlab.com/mmpose/datasets/smpl_mean_params.npz)
-under $MMPOSE/models/smpl, and make it look like this:
+under `$MMPOSE/models/smpl`, and make it look like this:
 
 ```
 mmpose
